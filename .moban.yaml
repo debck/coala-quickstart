@@ -1,0 +1,46 @@
+overrides: coala.yaml
+
+name: coala-quickstart
+contact: coala.analyzer@gmail.com
+description: A quickstart tool for coala
+current_version: 0.4.0
+version: 0.4.0
+build_version: 0.4.0
+package_module: coala_quickstart
+url: https://github.com/coala/coala-quickstart
+
+maintainers:
+  - Satwik Kansal
+  - Adrian Zatreanu
+  - Alexandros Dimos
+  - Adhityaa Chandrasekar
+maintainer_emails:
+  - satwikkansal@gmail.com
+  - adrianzatreanu1@gmail.com
+  - alexandros.dimos.95@gmail.com
+  - c.adhityaa@gmail.com
+
+entry_points:
+  console_scripts:
+    - coala-quickstart = coala_quickstart.coala_quickstart:main
+
+dependencies:
+  # TODO: Remove lxml once the upstream issue https://github.com/vfaronov/httpolice/issues/5 with HTTpolice is fixed.
+  - lxml==3.6.0
+  - coala_bears~=0.12.0.dev20170722110839
+  - coala_utils~=0.6.6
+  - gemfileparser~=0.6.2
+  - pyjsparser~=2.4.5
+
+
+configuration:
+  template_dir:
+    - ../coala-mobans/templates/
+    - ../setupmobans/templates/
+  configuration: .moban.yaml
+  configuration_dir: ../coala-mobans/
+targets:
+  - setup.py: coala-setup.py.jj2
+  - requirements.txt: requirements.txt.jj2
+  - coala_quickstart/VERSION: VERSION.jj2
+  - coala_quickstart/_version.py: _version.py.jj2

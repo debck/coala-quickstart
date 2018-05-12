@@ -8,6 +8,7 @@ from pyprint.ConsolePrinter import ConsolePrinter
 from coala_utils.FilePathCompleter import FilePathCompleter
 from coala_utils.Question import ask_question
 
+from coala_quickstart._version import __version__
 from coala_quickstart.interaction.Logo import print_welcome_message
 from coala_quickstart.generation.InfoCollector import collect_info
 from coala_quickstart.generation.Project import (
@@ -34,7 +35,7 @@ coala-quickstart automatically creates a .coafile for use by coala.
     )
 
     arg_parser.add_argument(
-        '-v', '--version', action='version', version='0.4.0')
+        '-v', '--version', action='version', version=__version__)
 
     arg_parser.add_argument(
         '-C', '--non-interactive', const=True, action='store_const',
